@@ -62,6 +62,14 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.30</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
@@ -127,6 +135,13 @@
 
 	<profiles>
 		<profile>
+			<id>test</id>
+			<properties>
+				<activatedProperties>test</activatedProperties>
+			</properties>
+		</profile>
+
+		<profile>
 			<id>dev</id>
 			<properties>
 				<activatedProperties>dev</activatedProperties>
@@ -136,6 +151,7 @@
 			</activation>
 
 		</profile>
+
 		<profile>
 			<id>prod</id>
 			<properties>

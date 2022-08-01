@@ -12,6 +12,9 @@ data class Usuario(
         val email: String,
         val password: String,
 
+
+        // relacionamento muitos para muitos, criacao de uma terceira tabela
+        // carregar todas as roles do usuario usando EAGER
         @JsonIgnore
         @ManyToMany(fetch = FetchType.EAGER)
         @JoinColumn(name = "usuario_role")

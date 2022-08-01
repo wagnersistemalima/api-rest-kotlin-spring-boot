@@ -89,6 +89,7 @@ Pageable
   da anotação @PageableDefault
 * Pageable tem suporte para ordenação
 * Exemplo: Default quando não passar parametro na url
+* @RequestParam(required = false)  -> esse parametro pode ser opcional, se nao vinher trazer toda a lista
 
 ```
 // ordenando 10 registros por pagina (size = 10)
@@ -199,3 +200,27 @@ spring:
 
 ```
 
+## Testes manuais
+
+* O teste de unidade tem como característica testar realmente a menor parte do nosso sistema, seja uma classe ou até mesmo um método onde podemos validar, por exemplo, uma regra de negócio.
+
+* vamos utilizar o MockK, que é uma ferramenta aqui do Kotlin que vem ganhando bastante espaço no mercado.
+
+
+
+## Testes de integração
+
+* testar a integração da nossa aplicação com o banco de dados por exemplo
+* teste de containers é baseado na ideia de: ao invés de eu fazer um teste integração da minha aplicação com a base de produção, com a base de homologação ou com a base mesmo de dev, e dessa forma eu sujar, digamos assim, com os dados do teste essas bases, eu tenho uma ferramenta que em tempo de execução dos meus testes vai subir um container, vai aplicar as migrações, eu vou fazer os testes dessa integração e depois esse container não vai existir mais.
+
+
+
+## Testes de Api
+
+* testes de API utilizando o mock mvc
+* é um recurso do próprio Spring que nos fornece aqui uma forma de testar as nossas APIs. Dessa maneira, conseguimos testar se nossa API não está aceitando parâmetros errados, que o recurso da nossa aplicação está fazendo a chamada correta para o método correto, ou seja, através de uma entrada a saída que eu espero tem que ser a de tópicos por exemplo.
+
+
+## Documentado Api
+
+* utilizar o swag, que é uma ferramenta bastante utilizada também no mercado de documentação de API para documentar as nossas APIs de tópico.
