@@ -11,6 +11,7 @@ import br.com.alura.forum.repository.TopicoRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
+import java.time.LocalDate
 import javax.persistence.EntityManager
 
 @Service
@@ -26,7 +27,6 @@ class TopicoService(
             nomeCurso: String?,
             paginacao: Pageable
     ): Page<TopicoView> {
-
         val topicos = nomeCurso?.let {
             repository.findByCursoNome(nomeCurso, paginacao)
         } ?: repository.findAll(paginacao)
@@ -53,6 +53,7 @@ class TopicoService(
                 .orElseThrow{NotFoundException(notFoundMessage)}
         topico.titulo = form.titulo
         topico.mensagem = form.mensagem
+        topico.dataAlteracao = LocalDate.now()
         return topicoViewMapper.map(topico)
     }
 

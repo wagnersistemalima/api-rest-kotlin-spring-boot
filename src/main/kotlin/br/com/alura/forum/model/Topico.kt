@@ -1,5 +1,6 @@
 package br.com.alura.forum.model
 
+import java.time.LocalDate
 import java.time.LocalDateTime
 import javax.persistence.*
 
@@ -22,5 +23,7 @@ data class Topico(
         val status: StatusTopico = StatusTopico.NAO_RESPONDIDO,
 
         @OneToMany(mappedBy = "topico")      // Um Topico tem varias respostas -> OneToMany bidirecional mappedBy
-        val respostas: List<Resposta> = ArrayList()
+        val respostas: List<Resposta> = ArrayList(),
+
+        var dataAlteracao: LocalDate? = null
 )
