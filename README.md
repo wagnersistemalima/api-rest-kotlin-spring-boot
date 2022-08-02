@@ -200,11 +200,17 @@ spring:
 
 ```
 
-## Testes manuais
+## Testes unidade
 
 * O teste de unidade tem como característica testar realmente a menor parte do nosso sistema, seja uma classe ou até mesmo um método onde podemos validar, por exemplo, uma regra de negócio.
 
-* vamos utilizar o MockK, que é uma ferramenta aqui do Kotlin que vem ganhando bastante espaço no mercado.
+* utilizando o MockK, que é uma ferramenta aqui do Kotlin que vem ganhando bastante espaço no mercado.
+
+* utilizar tambem a biblioteca AasertJ
+
+* MockK para mockar recursos, como um repositório. Já o AssertJ para fazer asserções.
+
+[AasertJ github](https://joel-costigliola.github.io/assertj/)
 
 
 
