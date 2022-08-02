@@ -13,28 +13,20 @@ class ExceptionHandler {
 
     @ExceptionHandler(NotFoundException::class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    fun handleNotFound(
-            exception: NotFoundException,
-            request: HttpServletRequest
-    ): ErrorView {
+    fun handleNotFound(exception: NotFoundException, request: HttpServletRequest): ErrorView {
         return ErrorView(
                 status = HttpStatus.NOT_FOUND.value(),
                 error = HttpStatus.NOT_FOUND.name,
-                message = exception.message,
+                message = exception.message ?: "Entity not found",
                 path = request.servletPath
         )
     }
 
     @ExceptionHandler(MethodArgumentNotValidException::class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    fun handleValidationError(
-            exception: MethodArgumentNotValidException,
-            request: HttpServletRequest
-    ): ErrorView {
+    fun handleValidationError(exception: MethodArgumentNotValidException, request: HttpServletRequest): ErrorView {
         val errorMessage = HashMap<String, String?>()
-        exception.bindingResult.fieldErrors.forEach{
-            e -> errorMessage.put(e.field, e.defaultMessage)
-        }
+        exception.bindingResult.fieldErrors.forEach{ error -> errorMessage[error.field] = error.defaultMessage }
         return ErrorView(
                 status = HttpStatus.BAD_REQUEST.value(),
                 error = HttpStatus.BAD_REQUEST.name,
@@ -45,14 +37,12 @@ class ExceptionHandler {
 
     @ExceptionHandler(Exception::class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    fun handleServerError(
-            exception: Exception,
-            request: HttpServletRequest
+    fun handleServerError(exception: Exception, request: HttpServletRequest
     ): ErrorView {
         return ErrorView(
                 status = HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 error = HttpStatus.INTERNAL_SERVER_ERROR.name,
-                message = exception.message,
+                message = exception.message ?: "Internal server error",
                 path = request.servletPath
         )
     }
