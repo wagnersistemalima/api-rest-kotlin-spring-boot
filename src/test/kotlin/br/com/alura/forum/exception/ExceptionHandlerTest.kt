@@ -19,7 +19,6 @@ class ExceptionHandlerTest {
 
     private val request = MockHttpServletRequest()
 
-
     @Test
     fun `deve garantir que uma NotFoundException de entrada retornara 404`() {
 
@@ -40,4 +39,5 @@ class ExceptionHandlerTest {
         Assertions.assertEquals(HttpStatus.INTERNAL_SERVER_ERROR.name, response.error)
 
     }
+
 }

@@ -213,6 +213,57 @@ spring:
 [AasertJ github](https://joel-costigliola.github.io/assertj/)
 
 
+## testes de container
+
+[testcontainers](https://www.testcontainers.org/)
+
+* Testcontainers é uma biblioteca Java que oferece suporte a testes JUnit, fornecendo instâncias leves e descartáveis ​​de bancos de dados comuns, navegadores da Web Selenium ou qualquer outra coisa que possa ser executada em um contêiner do Docker.
+
+* pre requisitos: Dependências do Maven
+
+```
+<properties>
+   <testcontainers.version>1.17.3</testcontainers.version>
+<properties>
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers-bom</artifactId>
+            <version>${testcontainers.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+
+```
+
+* dependencia mysql
+
+```
+<dependency>
+    <groupId>org.testcontainers</groupId>
+    <artifactId>mysql</artifactId>
+    <scope>test</scope>
+</dependency>
+
+
+```
+
+* dependencia junit-jupter
+
+```
+
+<dependency>
+	<groupId>org.testcontainers</groupId>
+	<artifactId>junit-jupiter</artifactId>
+	<scope>test</scope>
+</dependency>
+
+```
 
 ## Testes de integração
 
