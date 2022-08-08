@@ -295,3 +295,17 @@ spring:
 ## Documentado Api
 
 * utilizar o swag, que é uma ferramenta bastante utilizada também no mercado de documentação de API para documentar as nossas APIs de tópico.
+* Biblioteca Springdoc OpenAPI UI
+* http://www.localhost:8080/swagger-ui/index.html
+
+```
+<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>1.6.9</version>
+</dependency>
+
+```
+
+![swagger](/image/swagger.png)
