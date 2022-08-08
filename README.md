@@ -269,6 +269,20 @@ spring:
 
 * testar a integração da nossa aplicação com o banco de dados por exemplo
 * teste de containers é baseado na ideia de: ao invés de eu fazer um teste integração da minha aplicação com a base de produção, com a base de homologação ou com a base mesmo de dev, e dessa forma eu sujar, digamos assim, com os dados do teste essas bases, eu tenho uma ferramenta que em tempo de execução dos meus testes vai subir um container, vai aplicar as migrações, eu vou fazer os testes dessa integração e depois esse container não vai existir mais.
+* adicionar dependencia no pom.xml do spring security test
+
+```
+
+<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-test</artifactId>
+    <scope>test</scope>
+</dependency>
+
+
+```
+
 
 
 
