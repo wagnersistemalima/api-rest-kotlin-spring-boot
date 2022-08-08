@@ -294,8 +294,9 @@ spring:
 
 ## Documentado Api
 
-* utilizar o swag, que é uma ferramenta bastante utilizada também no mercado de documentação de API para documentar as nossas APIs de tópico.
+* Utilizar o swag, que é uma ferramenta bastante utilizada também no mercado de documentação de API para documentar as nossas APIs de tópico.
 * Biblioteca Springdoc OpenAPI UI
+* Utilizar a interface gráfica do Swagger para realizar requisições para APIs. Para isso é necessário inserir a dependência no pom.xml da aplicação. Dessa maneira, já serão reconhecidos os endpoints da aplicação;
 * http://www.localhost:8080/swagger-ui/index.html
 
 ```
@@ -306,6 +307,20 @@ spring:
     <version>1.6.9</version>
 </dependency>
 
+```
+
+* Configuração do Swagger para fazer requisições via interface utilizando um token JWT.
+* @SecurityRequirement(name = "bearerAuth") na classe TopicoController
+```
+@Configuration
+@SecurityScheme(
+    name = "bearerAuth",
+    type = SecuritySchemeType.HTTP,
+    bearerFormat = "JWT",
+    scheme = "bearer"
+)
+class SwaggerConfiguration {
+}
 ```
 
 ![swagger](/image/swagger.png)
