@@ -294,7 +294,7 @@ spring:
 
 ## Documentado Api
 
-* Utilizar o swag, que é uma ferramenta bastante utilizada também no mercado de documentação de API para documentar as nossas APIs de tópico.
+* Utilizar o swagger, que é uma ferramenta bastante utilizada também no mercado de documentação de API para documentar as nossas APIs de tópico.
 * Biblioteca Springdoc OpenAPI UI
 * Utilizar a interface gráfica do Swagger para realizar requisições para APIs. Para isso é necessário inserir a dependência no pom.xml da aplicação. Dessa maneira, já serão reconhecidos os endpoints da aplicação;
 * http://www.localhost:8080/swagger-ui/index.html

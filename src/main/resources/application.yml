@@ -1,5 +1,5 @@
 spring:
   profiles:
-    active: ${APP_PROFILE:test}
+    active: ${APP_PROFILE:dev}
 
 # documentação swagger:  http://www.localhost:8080/swagger-ui/index.html
