@@ -22,6 +22,9 @@ class TopicoRepositoryTest {
     private lateinit var topicoRepository: TopicoRepository
 
     companion object {
+
+        // criando um container com banco de dados mySQL
+
         @Container
         private val mysqlContainer = MySQLContainer<Nothing>("mysql:8.0.30").apply {
             withDatabaseName("testdb")
